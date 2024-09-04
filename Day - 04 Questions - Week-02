@@ -1,0 +1,80 @@
+QUES 1:
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2;
+
+    cout << "Enter first integer: ";
+    cin >> num1;
+
+    cout << "Enter second integer: ";
+    cin >> num2;
+
+    cout << "Addition: " << num1 + num2 << endl;
+    cout << "Subtraction: " << num1 - num2 << endl;
+    cout << "Multiplication: " << num1 * num2 << endl;
+
+    if (num2 != 0) {
+        cout << "Division: " << static_cast<double>(num1) / num2 << endl;
+        cout << "Modulus: " << num1 % num2 << endl;
+    } else {
+        cout << "Division: Error! Division by zero." << endl;
+        cout << "Modulus: Error! Division by zero." << endl;
+    }
+
+    return 0;
+}
+
+
+
+QUES 2:
+#include <iostream>
+using namespace std;
+
+class Complex {
+private:
+    int real;
+    int imaginary;
+
+public:
+    Complex(int r = 0, int i = 0) : real(r), imaginary(i) {}
+
+    // Overload + operator
+    Complex operator + (const Complex& other) {
+        return Complex(real + other.real, imaginary + other.imaginary);
+    }
+
+    // Overload - operator
+    Complex operator - (const Complex& other) {
+        return Complex(real - other.real, imaginary - other.imaginary);
+    }
+
+    void display() const {
+        if (imaginary >= 0)
+            cout << real << " + " << imaginary << "i" << endl;
+        else
+            cout << real << " - " << -imaginary << "i" << endl;
+    }
+};
+
+int main() {
+    Complex num1(3, 4);
+    Complex num2(1, 2);
+
+    cout << "Complex Number 1: ";
+    num1.display();
+
+    cout << "Complex Number 2: ";
+    num2.display();
+
+    Complex sum = num1 + num2;
+    cout << "Sum: ";
+    sum.display();
+
+    Complex difference = num1 - num2;
+    cout << "Difference: ";
+    difference.display();
+
+    return 0;
+}
