@@ -1,0 +1,58 @@
+QUES 1:
+#include <iostream>
+#include <string>
+using namespace std;
+
+int stringLength(const std::string &str) {
+    return str.length();
+}
+
+int main() {
+    
+    string str1 = "Hello, World!";
+    
+
+
+    cout <<stringLength(str1) <<endl;
+
+
+    return 0;
+}
+
+
+QUES 2:
+#include <iostream>
+#include <string>
+using namespace std;
+int countCharacter(const std::string &str,char ch){
+    int count=0;
+    for(int i=0;i<str.length();i++){
+        if(str[i]==ch)
+        count++;
+    }
+    return count;
+}
+int main(){
+    string str1;
+    cin>>str1;
+    char q;
+    cin>>q;
+   
+    cout<<countCharacter(str1,q);
+
+}
+
+
+
+
+QUES 3:
+#include <iostream>
+using namespace std;
+string concatenateStrings(const std::string &str1,const std::string &str2){
+    return str1 +str2;
+}
+int main(){
+    string a,b;
+    cin>>a>>b;
+    cout<<concatenateStrings(a,b);
+}
